@@ -39,15 +39,15 @@ def main():
             cores_df = pd.read_csv(cf, names=['node', 'core_num'])
             #print(cores_df.node)
             cores_list = []
-            for i in range(1, 2):
+            for i in range(1, 314):
                 node = str(i)
                 core_num_node = cores_df.loc[cores_df.node == i]['core_num'].item()
-                print(d, node, core_num_node)
+                #print(d, node, core_num_node)
                 # Append rows in Empty Dataframe by adding dictionaries
                 dfObj = dfObj.append({'date': d, 'node': i, 'core_num': core_num_node}, ignore_index=True)
 
     #print(dfObj)
-    cores_average(dfObj).to_csv("avg_core_num_per_poly_1.csv", index=False)
+    cores_average(dfObj).to_csv("avg_core_num_per_poly.csv", index=False)
 
 
 
